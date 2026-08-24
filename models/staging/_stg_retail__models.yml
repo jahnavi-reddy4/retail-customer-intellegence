@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_online_retail__transactions
+    description: >
+      Cleaned transaction lines. Excludes guest checkouts (no customer id),
+      cancellations handling, and non-product codes. ~820k of the original
+      1.07M rows survive.
+    columns:
+      - name: invoice
+        data_tests: [not_null]

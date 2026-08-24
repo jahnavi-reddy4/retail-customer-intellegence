@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_rfm
+    columns:
+      - name: customer_id
+        data_tests: [not_null, unique]
+      - name: rfm_segment
+        data_tests: [not_null]
+  - name: mart_clv
+    columns:
+      - name: customer_id
+        data_tests: [not_null, unique]
+  - name: mart_customer_actions
+    columns:
+      - name: customer_id
+        data_tests: [not_null, unique]
+      - name: recommended_action
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Win-back (priority)','Win-back (low-cost)','Retain & Reward','Grow','Nurture','Maintain']

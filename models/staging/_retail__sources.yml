@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: retail
+    database: raw
+    schema: retail
+    tables:
+      - name: online_retail
+        description: Raw Online Retail II transactions (~1.07M rows, UK online gift retailer, 2009-2011).

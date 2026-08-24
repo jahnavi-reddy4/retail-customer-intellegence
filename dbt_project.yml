@@ -1,0 +1,20 @@
+name: 'retail_customer_intelligence'
+version: '1.0.0'
+profile: 'insurance_portfolio_analytics'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+vars:
+  snapshot_date: '2011-12-10'   # day after the last order in the data
+
+models:
+  retail_customer_intelligence:
+    staging:
+      +materialized: view
+      +schema: retail_staging
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
+      +schema: retail_marts
